@@ -1,0 +1,8 @@
+.user-list-root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 100px auto 0;
+    border: coral 1px solid;
+    width: 300px;
+}

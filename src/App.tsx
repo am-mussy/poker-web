@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import { Route, Routes} from "react-router-dom";
+import Room from "./pages/room/Room";
+import Home from "./pages/home/Home";
+import {IUser} from "./types/types";
+
+const defaultState:IUser = {
+    name: '',
+    host: false,
+    roomId: '',
+    scram: 0
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const [user, setUser] = useState(defaultState)
+
+    return (
+        <>
+            <Routes>
+                <Route path="/test" element={<Room roomId={user.roomId} name={user.name} host={user.host} scram={user.scram}/>}/>
+                <Route path="/" element={<Home user={user} setUser={setUser}/>}/>
+            </Routes>
+
+        </>
+    );
 }
 
 export default App;
