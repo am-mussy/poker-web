@@ -1,44 +1,32 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './room.css';
-import { io } from "socket.io-client";
 import {useNavigate} from "react-router-dom";
 import UserList from "./userList/UserList";
-import {IUser} from "../../types/types";
 import Cards from "./Cards/Cards";
-const socket = io("http://localhost:3001/", { transports : ['websocket'] });
+import {useAppDispatch, useAppSelector} from "../../hooks/hooks";
+import {roomSlice} from "../../store/reducers/RoomSlice";
 
-function Room({name, host, roomId, scram}:IUser) {
+function Room() {
 
-    const [userList, setUserList] = useState([])
     const navigate = useNavigate()
+    const userData = useAppSelector(state => state.userReducer)
+    const userList = useAppSelector(state => state.roomReducer.users)
+    const isHidden = useAppSelector(state => state.roomReducer.scramPointIsHidden)
+    const dispatch = useAppDispatch()
+    const {changeScramPointVisibility} = roomSlice.actions
 
     useEffect(()=>{
-        console.log(roomId)
-        if(!roomId){
+
+        if(!userData.roomId){
             navigate('/')
         }
-
-        socket.emit('joinToRoom', {
-            name: name,
-            roomId: roomId,
-            host: host,
-            scram: scram
-        })
-
-        console.log('getRoomId')
-        socket.emit('getRoomId')
-        socket.on('getRoomId', (data)=>{
-            console.log(data)
-            setUserList(data)
-        })
-
-
-    }, [])
-
+    }, [userList])
+    const changeVisibility = () => dispatch(changeScramPointVisibility())
     return (
         <div className="Room">
-            <div>ROOM ID:{roomId}</div>
+            <div>ROOM ID:{userData.roomId}</div>
             <Cards/>
+            <button onClick={changeVisibility}>{`${isHidden ? 'Показать' : 'Скрыть'}`}</button>
             <UserList users={userList}/>
         </div>
     );

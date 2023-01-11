@@ -1,9 +1,10 @@
 import {combineReducers} from "redux";
 import {configureStore} from "@reduxjs/toolkit";
 import userReducer from './reducers/UserSlice'
+import roomReducer from './reducers/RoomSlice'
 
 const rootReducer = combineReducers({
-    userReducer
+    userReducer, roomReducer
 })
 
 export const setupStore = () => {

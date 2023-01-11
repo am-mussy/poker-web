@@ -1,6 +1,12 @@
 export interface IUser {
-    name: string,
+    name: string | null,
     host: boolean,
-    roomId: string,
-    scram?: number
+    roomId: number | null,
+    scram?: number,
+    userId?: number | null
+}
+
+export interface IRoom {
+    users: IUser[],
+    scramPointIsHidden: boolean
 }

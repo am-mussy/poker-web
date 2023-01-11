@@ -1,17 +1,17 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {IUser} from "../../../types/types";
 import './userList.css'
 import UserLine from "./userLine/UserLine";
 
-interface UserListProps {
-    users:IUser[]
+type UserListProps = {
+    users: IUser[]
 }
 
-const UserList: FC<UserListProps> = ({users}) => {
-    console.log('users', users)
+const UserList = ({users}:UserListProps) => {
+
     return (
         <div className={'user-list-root'}>
-            {users.map(({name,scram})=><UserLine key={`${name}_key`} name={name} scram={scram}/>)}
+            {users.map(({name,scram})=><UserLine key={`${name}_key`} name={name ?? 'NO NAME'} scram={scram}/>)}
         </div>
     );
 }
