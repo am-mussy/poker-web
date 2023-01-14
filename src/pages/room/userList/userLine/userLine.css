@@ -1,0 +1,10 @@
+.user-line-root {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+}
+
+.score-blur {
+    filter: blur(10px);
+}
