@@ -40,9 +40,9 @@ export const userSlice = createSlice({
       });
     },
 
-    connect(state, action: PayloadAction<number>) {
-      state.name = null;
-      state.roomId = action.payload;
+    connect(state, action: PayloadAction<IUser>) {
+      state.name = action.payload.name;
+      state.roomId = action.payload.roomId;
       state.host = false;
       state.userId = createUserId();
 

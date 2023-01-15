@@ -23,3 +23,16 @@
 .room .connect input {
     width: 100px
 }
+
+.inputRoomId {
+
+}
+
+.inputName {
+
+}
+
+.inputError {
+    border: 2px solid red;
+    border-radius: 3px;
+}

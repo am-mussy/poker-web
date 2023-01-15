@@ -1,6 +1,6 @@
 export interface IUser {
   name: string | null;
-  host: boolean;
+  host?: boolean;
   roomId: number | null;
   scram?: number;
   userId?: number | null;
