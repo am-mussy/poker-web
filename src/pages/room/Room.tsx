@@ -5,10 +5,9 @@ import UserList from "./userList/UserList";
 import Cards from "./Cards/Cards";
 import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
 import { roomSlice } from "../../store/reducers/RoomSlice";
-import ErrorPopup from "../../modules/popup/ErrorPopupProps";
+import NeuButton from "../../components/button/NeuButton";
 
 function Room() {
-  let test: string = "beep";
   const navigate = useNavigate();
   const userData = useAppSelector((state) => state.userReducer);
   const userList = useAppSelector((state) => state.roomReducer.users);
@@ -30,9 +29,10 @@ function Room() {
     <div className="Room">
       <div>ROOM ID:{userData.roomId}</div>
       <Cards />
-      <button onClick={changeVisibility}>{`${
-        isHidden ? "Показать" : "Скрыть"
-      }`}</button>
+      <NeuButton
+        onClick={changeVisibility}
+        name={`${isHidden ? "Показать" : "Скрыть"}`}
+      />
       <UserList users={userList} />
     </div>
   );

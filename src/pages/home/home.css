@@ -1,3 +1,6 @@
+body {
+    background-color: #131419;
+}
 .main {
     margin-top: 100px;
     display: flex;
@@ -10,29 +13,81 @@
     flex-direction: column;
     height: 200px;
     width: 200px;
-
+    padding: 50px;
     gap: 30px;
+
+
+    background-color:#262A35;
+    box-shadow: 9px 9px 16px rgba(31, 35, 44, 0.5), -9px -9px 16px rgba(58,65,81, 50%);
+    border-radius: 20px;
+
 }
 
 .room .connect {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
+
 }
 
 .room .connect input {
     width: 100px
 }
 
-.inputRoomId {
-
-}
-
-.inputName {
-
-}
-
 .inputError {
     border: 2px solid red;
     border-radius: 3px;
 }
+
+.room {
+    position: relative;
+    padding: 40px 40px 60px;
+    border-radius: 10px;
+    background: #131419;
+    width: 240px;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.room  input {
+
+    color: #626161;
+    text-align: center;
+    background: #131419;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    padding: 5px 15px;
+    font-size: 18px;
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.room  button {
+    border: none;
+    border-radius: 40px;
+    text-transform: uppercase;
+    color: #626161;
+    background: #131419;
+    box-shadow: -2px -2px 6px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+
+}
+.room button:active {
+    color: #626161;
+    border-radius: 40px;
+
+    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+.room input::placeholder {
+    color: #555;
+    text-align: center;
+}
+
+.room input:focus::placeholder {
+    color: rgba(85, 85, 85, 15%);
+    text-align: center;
+}
+
+

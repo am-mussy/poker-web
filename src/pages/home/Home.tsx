@@ -6,7 +6,6 @@ import { userSlice } from "../../store/reducers/UserSlice";
 import { createRoomId } from "../../helpers/random";
 
 function Home() {
-  // for form
   const [name, setName] = useState("");
   const [roomId, setRoomId] = useState(0);
   const [activeCreateRoom, setActiveCreateRoom] = useState(false);
@@ -37,13 +36,17 @@ function Home() {
 
   const inputNameValidation = () => {
     if (activeCreateRoom) {
-      if (!name) return "inputError";
+      if (!name) return "inputError inputRoomId";
+    } else {
+      return "inputRoomId";
     }
   };
 
   const inputRoomIdValidation = () => {
     if (activeConnect) {
-      if (!roomId) return "inputError";
+      if (!roomId) return "inputError inputName";
+    } else {
+      return "inputName";
     }
   };
 
@@ -52,19 +55,23 @@ function Home() {
       <div className={"room"}>
         <input
           className={inputNameValidation()}
-          placeholder={"name"}
+          placeholder={"NAME"}
           onChange={(e) => setName(e.target.value)}
           onClick={() => setActiveConnect(false)}
         />
-        <button onClick={createHostingRoom}>create room</button>
+        <button type="submit" onClick={createHostingRoom}>
+          create room
+        </button>
         <div className={"connect"}>
           <input
             className={inputRoomIdValidation()}
             type="text"
-            placeholder={"room id"}
+            placeholder={"ROOM ID"}
             onChange={(e) => setRoomId(parseInt(e.target.value))}
           />
-          <button onClick={connectToHostingRoom}>connect</button>
+          <button type="submit" onClick={connectToHostingRoom}>
+            connect
+          </button>
         </div>
       </div>
     </div>

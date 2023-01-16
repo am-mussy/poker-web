@@ -1,10 +1,17 @@
 .Room {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 400px;
 
 
-    margin: 0 auto;
+    margin: 100px auto 0 auto;
+
+    padding: 40px 40px 60px;
+    border-radius: 10px;
+    background: #131419;
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
+    5px 5px 15px rgba(0, 0, 0, 0.5);
+
 
 }
 
@@ -12,4 +19,7 @@
     /*margin: 10px 0 10px 0;*/
     width: 100px;
     margin: 10px calc(100% - 100px);
+
+
 }
+

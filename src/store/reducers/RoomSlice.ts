@@ -1,10 +1,6 @@
 import { IRoom, IUser } from "../../types/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {
-  CHANGE_SCRAM_POINT_VISIBILITY,
-  JOIN_TO_ROOM,
-  socket,
-} from "../../API/socket";
+import { CHANGE_SCRAM_POINT_VISIBILITY, socket } from "../../API/socket";
 
 const initialState: IRoom = {
   roomId: 0,
