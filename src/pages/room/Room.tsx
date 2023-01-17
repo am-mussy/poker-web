@@ -30,6 +30,7 @@ function Room() {
       <div>ROOM ID:{userData.roomId}</div>
       <Cards />
       <NeuButton
+        className={"show-btn"}
         onClick={changeVisibility}
         name={`${isHidden ? "Показать" : "Скрыть"}`}
       />

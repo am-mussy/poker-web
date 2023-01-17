@@ -1,8 +1,7 @@
 .cards-root {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    gap: 10px;
+
     margin: 100px auto 0;
     border: coral 1px solid;
     width: 300px;

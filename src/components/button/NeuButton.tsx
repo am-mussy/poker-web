@@ -4,11 +4,12 @@ import "./neuButton.css";
 type NeuButtonProps = {
   name: string;
   onClick: () => void;
+  className: string;
 };
 
-const NeuButton = ({ name, onClick }: NeuButtonProps) => {
+const NeuButton = ({ name, onClick, className }: NeuButtonProps) => {
   return (
-    <button className={"btn"} onClick={onClick}>
+    <button className={`btn ${className}`} onClick={onClick}>
       {name}
     </button>
   );

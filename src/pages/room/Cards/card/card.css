@@ -1,3 +1,6 @@
+.card-root {
+   width: 30px;
+}
 .card-root:hover {
    cursor: pointer;
 }

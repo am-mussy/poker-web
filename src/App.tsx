@@ -10,17 +10,17 @@ import {
   socket,
   CHANGE_SCRAM_POINT_VISIBILITY,
 } from "./API/socket";
+import { IUser } from "./types/types";
 
 function App() {
   const { initialize, changeScramPointVisibility } = roomSlice.actions;
 
   const dispatch = useAppDispatch();
-  socket.on(UPDATE_USERS, (users) => {
-    console.log({ users });
+  socket.on(UPDATE_USERS, (users: IUser[]) => {
     dispatch(initialize(users));
   });
 
-  socket.on(CHANGE_SCRAM_POINT_VISIBILITY, (isVisible) => {
+  socket.on(CHANGE_SCRAM_POINT_VISIBILITY, (isVisible: boolean) => {
     dispatch(changeScramPointVisibility(isVisible));
   });
 

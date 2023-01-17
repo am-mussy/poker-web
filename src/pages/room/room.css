@@ -15,7 +15,7 @@
 
 }
 
-.Room button {
+.Room .show-btn {
     /*margin: 10px 0 10px 0;*/
     width: 100px;
     margin: 10px calc(100% - 100px);

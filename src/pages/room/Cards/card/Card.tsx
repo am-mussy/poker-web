@@ -1,25 +1,33 @@
-import React, {FC} from 'react';
-import './card.css'
-import {useAppDispatch} from "../../../../hooks/hooks";
-import {userSlice} from "../../../../store/reducers/UserSlice";
+import React, { FC } from "react";
+import "./card.css";
+import { useAppDispatch } from "../../../../hooks/hooks";
+import { userSlice } from "../../../../store/reducers/UserSlice";
 
 interface CardProps {
-    fibNumber: number
+  fibNumber: number;
 }
 
-const Card: FC<CardProps> = ({fibNumber}) => {
+const Card: FC<CardProps> = ({ fibNumber }) => {
+  const { setScramPoint } = userSlice.actions;
+  const dispatch = useAppDispatch();
 
-    const {setScramPoint} = userSlice.actions
-    const dispatch = useAppDispatch()
-    function scramSelect (event:any) {
-        dispatch(setScramPoint(event.target.innerHTML))
-    }
+  const handleChange = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    const scramVoter: number = parseInt(event.currentTarget.innerText);
+    dispatch(setScramPoint(scramVoter));
+  };
 
-    return (
-        <div className={'card-root'} onClick={scramSelect}>
-            {fibNumber}
-        </div>
-    );
-}
+  return (
+    <button
+      className={"card-root"}
+      onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+        return handleChange(event);
+      }}
+    >
+      {fibNumber}
+    </button>
+  );
+};
 
 export default Card;
