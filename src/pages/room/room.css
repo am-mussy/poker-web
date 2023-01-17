@@ -1,3 +1,17 @@
+/*body {*/
+/*    --main-color: #252731;*/
+
+/*    !*room color*!*/
+/*    --room-shadow-color-dark: rgba(0, 0, 0, 0.5);*/
+/*    --room-shadow-color-lightn: rgba(255, 255, 255, 0.05);*/
+
+
+
+/*    !*text color*!*/
+/*    --text-color: #626161*/
+/*}*/
+
+
 .Room {
     display: flex;
     flex-direction: column;
@@ -8,9 +22,9 @@
 
     padding: 40px 40px 60px;
     border-radius: 10px;
-    background: #131419;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05),
-    5px 5px 15px rgba(0, 0, 0, 0.5);
+    background: var(--main-color);
+    box-shadow: -5px -5px 10px var(--room-shadow-color-lightn),
+    5px 5px 15px var(--room-shadow-color-dark);
 
 
 }
@@ -24,14 +38,14 @@
 }
 
 .roomId {
-    color: #626161;
+    color: var(--text-color);
     text-align: center;
-    background: #131419;
+    background: var(--main-color);
     border: none;
     outline: none;
     border-radius: 40px;
     padding: 5px 15px;
     font-size: 18px;
-    box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
-    inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+    box-shadow: inset -2px -2px 6px var(--room-shadow-color-lightn),
+    inset 2px 2px 6px var(--room-shadow-color-dark);
 }

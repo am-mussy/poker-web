@@ -26,7 +26,7 @@ const Card: FC<CardProps> = ({ fibNumber }) => {
         onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
           return handleChange(event);
         }}
-        className={"btn"}
+        className={"vote-btn"}
       />
     </div>
   );
