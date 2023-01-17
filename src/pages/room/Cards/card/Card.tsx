@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import "./card.css";
 import { useAppDispatch } from "../../../../hooks/hooks";
 import { userSlice } from "../../../../store/reducers/UserSlice";
+import NeuButton from "../../../../components/button/NeuButton";
 
 interface CardProps {
   fibNumber: number;
@@ -19,14 +20,15 @@ const Card: FC<CardProps> = ({ fibNumber }) => {
   };
 
   return (
-    <button
-      className={"card-root"}
-      onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-        return handleChange(event);
-      }}
-    >
-      {fibNumber}
-    </button>
+    <div className={"scrumVote-wrapper"}>
+      <NeuButton
+        name={fibNumber}
+        onClick={(event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+          return handleChange(event);
+        }}
+        className={"btn"}
+      />
+    </div>
   );
 };
 

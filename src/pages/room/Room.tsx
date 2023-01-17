@@ -27,7 +27,7 @@ function Room() {
     dispatch(changeScramPointVisibility(!isHidden));
   return (
     <div className="Room">
-      <div>ROOM ID:{userData.roomId}</div>
+      <div className={"roomId"}>ROOM ID:{userData.roomId}</div>
       <Cards />
       <NeuButton
         className={"show-btn"}

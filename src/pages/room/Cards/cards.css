@@ -1,8 +1,5 @@
 .cards-root {
     display: flex;
     flex-direction: row;
-
-    margin: 100px auto 0;
-    border: coral 1px solid;
-    width: 300px;
 }
+

@@ -2,8 +2,8 @@ import React from "react";
 import "./neuButton.css";
 
 type NeuButtonProps = {
-  name: string;
-  onClick: () => void;
+  name: string | number;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
   className: string;
 };
 
